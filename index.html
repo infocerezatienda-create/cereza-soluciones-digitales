@@ -618,7 +618,60 @@
     .about-creds { grid-template-columns: 1fr; }
   }
 
-  /* TABS DE SERVICIOS */
+  /* HOW IT WORKS */
+  .how-it-works {
+    background: var(--bg-soft);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .how-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .how-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .how-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .how-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .how-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .how-arrow {
+    font-size: 18px;
+    color: var(--cereza);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 640px) {
+    .how-steps { flex-direction: column; gap: 1rem; }
+    .how-arrow { display: none; }
+  }
+
+
   .tabs-nav {
     display: flex;
     flex-wrap: wrap;
@@ -841,8 +894,20 @@
 
   @media (max-width: 640px) {
     .services-grid, .services-grid.triple { grid-template-columns: 1fr; }
-    .tabs-nav { gap: 6px; }
-    .tab-btn { font-size: 11px; padding: 6px 10px; }
+    .tabs-nav {
+      gap: 6px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .tab-btn {
+      font-size: 11px;
+      padding: 8px 6px;
+      justify-content: center;
+      text-align: center;
+      white-space: normal;
+      line-height: 1.3;
+    }
+    .tab-btn i { display: none; }
   }
 
   /* SOBRE MI - NUEVA VERSION */
@@ -979,7 +1044,7 @@
   <button class="tab-btn" onclick="switchTab('mejorar')"><i class="ti ti-trending-up"></i> Mejorar mi tienda</button>
   <button class="tab-btn" onclick="switchTab('productos')"><i class="ti ti-package"></i> Carga de productos</button>
   <button class="tab-btn" onclick="switchTab('presencia')"><i class="ti ti-device-mobile"></i> Presencia digital</button>
-  <button class="tab-btn" onclick="switchTab('marketplace')"><i class="ti ti-shopping-cart"></i> Marketplace</button>
+  <button class="tab-btn" onclick="switchTab('marketplace')"><i class="ti ti-shopping-cart"></i> Mercado Libre</button>
 </div>
 
 
@@ -994,18 +1059,22 @@
       <p class="svc-ideal">Ideal para quienes todavía no tienen ecommerce y quieren empezar bien.</p>
       <div class="svc-divider"></div>
       <div class="svc-section-title">Incluye</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Configuración completa de Tiendanube</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Medios de pago (Mercado Pago + prueba de cobro)</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Medios de envío (Correo + motomensajería)</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Páginas legales y de contacto</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Configuración sobre plantilla de Tiendanube</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Personalización básica (logo, colores y tipografías de la plantilla)</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Banner principal para la Home</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Hasta 2 banners para categorías o promociones</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Configuración de medios de pago (Mercado Pago + prueba de compra)</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Configuración de medios de envío y puntos de retiro</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Páginas legales, de contacto y preguntas frecuentes</div>
       <div class="svc-item"><span class="svc-check">✔</span>Categorías y estructura de la tienda</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Capacitación básica incluida</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Configuración de barra de anuncio</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Capacitación básica</div>
       <div class="svc-divider"></div>
       <div class="svc-section-title" style="margin-top:0">No incluye</div>
       <div class="svc-no">
-        <span class="svc-no-tag">Dominio propio</span>
-        <span class="svc-no-tag">Carga de productos</span>
-        <span class="svc-no-tag">SEO avanzado</span>
+        <span class="svc-no-tag">✘ Dominio propio</span>
+        <span class="svc-no-tag">✘ Carga de productos</span>
+        <span class="svc-no-tag">✘ Diseño a medida o modificaciones del código</span>
       </div>
       <div class="svc-time"><i class="ti ti-clock"></i>5 a 10 días hábiles</div>
       <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20el%20Pack%20Lanz%C3%A1%20tu%20Tienda" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
@@ -1014,7 +1083,7 @@
     <div class="svc-card featured">
       <div class="svc-badge">Más completo</div>
       <div class="svc-tag">Pack Profesional</div>
-      <h3 class="svc-name">Impulso Ecommerce</h3>
+      <h3 class="svc-name">Tu Tienda Más Profesional</h3>
       <p class="svc-ideal">Para marcas que quieren una tienda profesional, completa y preparada para generar ventas.</p>
       <div class="svc-includes"><i class="ti ti-check" style="font-size:12px"></i>Incluye todo el Pack Inicial</div>
       <div class="svc-section-title">Dominio propio</div>
@@ -1048,35 +1117,35 @@
       <div class="svc-badge">Más pedido</div>
       <div class="svc-tag">Tiendanube</div>
       <h3 class="svc-name">Optimización de Tiendanube</h3>
-      <p class="svc-ideal">¿Ya tenés una tienda pero no está vendiendo como esperabas? Analizo y la dejo lista para convertir.</p>
+      <p class="svc-ideal">¿Ya tenés una tienda pero no está vendiendo como esperabas? Analizo cada punto de fricción, implemento los cambios y te entrego un informe con todo lo que se mejoró.</p>
       <div class="svc-divider"></div>
       <div class="svc-section-title">Incluye</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Auditoría completa de la tienda</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Optimización de página de inicio</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Organización de categorías</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Mejora de fichas de producto</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Optimización de banners</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Revisión del proceso de compra</div>
-      <div class="svc-item"><span class="svc-check">✔</span>SEO básico</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Recomendaciones de velocidad</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Informe con oportunidades de mejora</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Auditoría completa de la tienda (qué frena las ventas)</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Página de inicio optimizada para generar confianza</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Categorías reorganizadas para que sea fácil navegar</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Fichas de producto reescritas para convencer y vender</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Banners actualizados con foco en la conversión</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Proceso de compra revisado y sin fricciones</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Experiencia en mobile revisada y corregida</div>
+      <div class="svc-item"><span class="svc-check">✔</span>SEO básico aplicado (títulos, descripciones y URLs)</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Informe final con todos los cambios realizados</div>
       <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20la%20Optimizaci%C3%B3n%20de%20Tiendanube" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
     </div>
 
     <div class="svc-card">
       <div class="svc-tag">Análisis estratégico</div>
-      <h3 class="svc-name">Auditoría de Negocio</h3>
-      <p class="svc-ideal">Un informe personalizado con lo que está funcionando, lo que frena tus ventas y qué hacer primero.</p>
+      <h3 class="svc-name">Diagnóstico + Plan de Acción</h3>
+      <p class="svc-ideal">No sabés por dónde empezar o qué está fallando. Te doy un diagnóstico claro de tu negocio y un plan concreto para los próximos 30 días.</p>
       <div class="svc-divider"></div>
       <div class="svc-section-title">Incluye</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Análisis de qué está funcionando</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Identificación de lo que frena las ventas</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Prioridades y acciones concretas</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Análisis de tu tienda, redes y canales de venta</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Identificación de los puntos que frenan las ventas</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Mapa de prioridades (qué cambiar primero y por qué)</div>
       <div class="svc-item"><span class="svc-check">✔</span>Plan de acción para los próximos 30 días</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Informe escrito entregable</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Informe escrito y entregable</div>
       <div class="svc-divider"></div>
-      <p class="svc-ideal" style="margin-bottom:0">No requiere implementar cambios — solo análisis y recomendaciones.</p>
-      <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20la%20Auditor%C3%ADa%20de%20Negocio" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
+      <p class="svc-ideal" style="margin-bottom:0;font-style:italic">No incluye implementación de cambios — ideal como punto de partida antes de encarar cualquier mejora.</p>
+      <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20el%20Diagn%C3%B3stico%20%2B%20Plan%20de%20Acci%C3%B3n" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
     </div>
 
     <div class="svc-card">
@@ -1114,7 +1183,35 @@
 
 <!-- TAB: CARGA DE PRODUCTOS -->
 <div class="tab-panel" id="tab-productos">
-  <p class="tab-intro">Vos conseguís los productos. Yo los cargo, optimizo y dejo la tienda lista para vender.</p>
+
+  <div class="how-it-works">
+    <p class="section-label" style="margin-bottom:1rem">¿Cómo funciona?</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-icon">📋</div>
+        <div>
+          <div class="how-title">Vos me enviás la info</div>
+          <div class="how-desc">Nombre, descripción o detalles, precio, variantes (talle, color, etc.), peso, dimensiones e imágenes de cada producto</div>
+        </div>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-icon">✍️</div>
+        <div>
+          <div class="how-title">Yo redacto y optimizo</div>
+          <div class="how-desc">Descripciones, SEO, atributos y todo lo necesario para que cada producto esté listo para vender</div>
+        </div>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-icon">✅</div>
+        <div>
+          <div class="how-title">Tu tienda queda lista</div>
+          <div class="how-desc">Productos cargados, organizados y optimizados para que empieces a vender desde el primer día</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="services-grid triple">
 
     <div class="svc-card">
@@ -1186,22 +1283,44 @@
       <div class="svc-item"><span class="svc-check">✔</span>Portadas de destacadas</div>
       <div class="svc-item"><span class="svc-check">✔</span>9 publicaciones iniciales</div>
       <div class="svc-section-title">Canales de venta</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Apertura de cuenta en Tiendanube</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Configuración básica (nombre, logo y colores)</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Vinculación con Mercado Pago</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Un método de envío básico</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Botón de consulta por WhatsApp en la tienda</div>
       <div class="svc-item"><span class="svc-check">✔</span>Configuración de WhatsApp Business</div>
       <div class="svc-item"><span class="svc-check">✔</span>Linktree configurado y conectado</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Configuración de Tiendanube</div>
       <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20el%20Kit%20de%20Lanzamiento%20Digital" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
     </div>
 
     <div class="svc-card">
-      <div class="svc-tag">Servicios individuales</div>
-      <h3 class="svc-name">Canales por separado</h3>
-      <p class="svc-ideal">¿Ya tenés algo armado? Completamos lo que falta.</p>
+      <div class="svc-tag">WhatsApp</div>
+      <h3 class="svc-name">WhatsApp Business Profesional</h3>
+      <p class="svc-ideal">Para quienes quieren atender y vender por WhatsApp de forma profesional desde el primer día.</p>
       <div class="svc-divider"></div>
-      <div class="svc-item"><span class="svc-check">✔</span>WhatsApp Business (catálogo + respuestas automáticas)</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Linktree (enlace único con todos tus canales)</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Bio y perfil de Instagram optimizado</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Portadas de destacadas de Instagram</div>
-      <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20configurar%20canales%20digitales" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
+      <div class="svc-section-title">Incluye</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Configuración de WhatsApp Business</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Catálogo de productos</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Mensaje de bienvenida</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Mensaje de ausencia</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Respuestas rápidas para preguntas frecuentes</div>
+      <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20WhatsApp%20Business%20Profesional" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-tag">Instagram</div>
+      <h3 class="svc-name">Instagram Profesional</h3>
+      <p class="svc-ideal">Para quienes quieren que su perfil genere confianza, atraiga clientas y responda solo.</p>
+      <div class="svc-divider"></div>
+      <div class="svc-section-title">Incluye</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Bio optimizada para vender</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Foto de perfil</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Portadas de destacadas</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Linktree configurado y conectado</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Mensaje de bienvenida automático</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Respuesta fuera de horario configurada</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Respuestas rápidas para preguntas frecuentes</div>
+      <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20Instagram%20Profesional" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
     </div>
 
   </div>
@@ -1209,24 +1328,45 @@
 
 <!-- TAB: MARKETPLACE -->
 <div class="tab-panel" id="tab-marketplace">
-  <p class="tab-intro">Muchos venden en Mercado Libre pero tienen publicaciones poco trabajadas. Eso se nota — y se corrige.</p>
-  <div class="services-grid single">
+  <p class="tab-intro">Dos momentos, dos servicios. Tanto si arrancás desde cero como si ya vendés y querés mejorar.</p>
+  <div class="services-grid">
 
-    <div class="svc-card featured">
-      <div class="svc-badge">Diferenciarte importa</div>
-      <div class="svc-tag">Mercado Libre</div>
-      <h3 class="svc-name">Optimización de Publicaciones</h3>
-      <p class="svc-ideal">Publicaciones mejor posicionadas, con más clics y más conversiones.</p>
+    <div class="svc-card">
+      <div class="svc-tag">Plan Lanzamiento</div>
+      <h3 class="svc-name">Lanzamiento en Mercado Libre</h3>
+      <p class="svc-ideal">Para quienes nunca vendieron en Mercado Libre y quieren empezar bien desde el principio.</p>
       <div class="svc-divider"></div>
       <div class="svc-section-title">Incluye</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Apertura y configuración de la cuenta</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Carga de publicaciones (hasta 20 productos)</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Fotos optimizadas para Mercado Libre</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Títulos con palabras clave</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Descripciones que venden</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Categorías correctas</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Variantes configuradas</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Preguntas frecuentes básicas</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Configuración de Mercado Envíos</div>
+      <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20el%20Lanzamiento%20en%20Mercado%20Libre" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
+    </div>
+
+    <div class="svc-card featured">
+      <div class="svc-badge">Más completo</div>
+      <div class="svc-tag">Plan Optimización</div>
+      <h3 class="svc-name">Optimización de Mercado Libre</h3>
+      <p class="svc-ideal">Para quienes ya venden pero sus publicaciones no están rindiendo como deberían.</p>
+      <div class="svc-divider"></div>
+      <div class="svc-section-title">Incluye</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Auditoría de las publicaciones actuales</div>
       <div class="svc-item"><span class="svc-check">✔</span>Optimización de títulos para búsqueda</div>
       <div class="svc-item"><span class="svc-check">✔</span>Mejora de descripciones</div>
       <div class="svc-item"><span class="svc-check">✔</span>Revisión y optimización de imágenes</div>
       <div class="svc-item"><span class="svc-check">✔</span>SEO dentro de la plataforma</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Configuración de variantes</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Categorías correctas</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Corrección de categorías</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Variantes bien configuradas</div>
       <div class="svc-item"><span class="svc-check">✔</span>Preguntas frecuentes</div>
-      <div class="svc-item"><span class="svc-check">✔</span>Revisión general de todas las publicaciones</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Plantillas de respuesta para preguntas frecuentes (envíos, cambios, roturas, demoras)</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Plantillas para gestión de problemas y calificaciones</div>
+      <div class="svc-item"><span class="svc-check">✔</span>Informe final con cambios realizados</div>
       <a class="svc-cta" href="https://wa.me/541163712961?text=Hola%20Giselle%2C%20me%20interesa%20la%20Optimizaci%C3%B3n%20de%20Mercado%20Libre" target="_blank">Consultar <i class="ti ti-arrow-right" style="font-size:13px"></i></a>
     </div>
 
@@ -1254,7 +1394,7 @@ function switchTab(id) {
 <p class="eco-intro">Para vender bien online no alcanza solo con la tienda ni solo con el packaging. Las dos cosas juntas construyen una experiencia de marca que enamora y convierte.</p>
 <div class="eco-grid">
 <div class="eco-card">
-<div class="eco-card-tag">La pata digital</div>
+<div class="eco-card-tag">Tu ecommerce</div>
 <div class="eco-card-name"><span>Cereza</span> Soluciones Digitales</div>
 <div class="eco-card-desc">Configuro tu tienda online en Tiendanube: medios de pago, envíos, diseño visual, SEO básico y todo lo técnico para que puedas empezar a vender.</div>
 <div class="eco-pill"><i class="ti ti-device-laptop" style="font-size:12px"></i>Estás aquí</div>
@@ -1264,7 +1404,7 @@ function switchTab(id) {
 <div class="eco-equals">juntas,<br/>una marca<br/>completa</div>
 </div>
 <a class="eco-card" href="https://www.tiendacereza.com.ar" target="_blank">
-<div class="eco-card-tag">El packaging y la identidad</div>
+<div class="eco-card-tag">Tu packaging, tu identidad</div>
 <div class="eco-card-name"><span>Tienda</span> Cereza</div>
 <div class="eco-card-desc">Imprimibles para emprendedoras: etiquetas, tags, bolsas, tarjetas y todo lo que hace que tu producto llegue con identidad y amor.</div>
 <div class="eco-pill"><i class="ti ti-external-link" style="font-size:12px"></i>Visitá la tienda</div>
@@ -1284,18 +1424,18 @@ function switchTab(id) {
   <div class="about-left-v2">
     <img alt="Giselle Calabrese" class="about-photo" src="data:image/jpeg;base64,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"/>
     <div class="about-name">Giselle<br/>Calabrese</div>
-    <div class="about-role" style="margin-top:2px;font-size:11.5px;color:var(--text-muted);line-height:1.6">Lic. en Comunicación Social<br/>Comunicación y producto digital</div>
+    <div class="about-role" style="margin-top:2px;font-size:11.5px;color:var(--text-muted);line-height:1.6">Lic. en Comunicación Social<br/>Especialista en Producto Digital y Ecommerce<br/>Creo marcas visualmente atractivas y coherentes.</div>
     <div class="about-tags">
-      <div class="about-tag"><i class="ti ti-map-pin"></i>Buenos Aires</div>
-      <div class="about-tag"><i class="ti ti-building-store"></i>+10 años en ecommerce</div>
-      <div class="about-tag"><i class="ti ti-device-laptop"></i>Producto digital</div>
+      <div class="about-tag"><i class="ti ti-map-pin"></i>Chacarita, CABA</div>
+      <div class="about-tag"><i class="ti ti-building-store"></i>+ de 10 años en Ecommerce y Producto Digital</div>
     </div>
   </div>
   <div class="about-body-v2">
-    <p>Soy Giselle Calabrese, creadora de Cereza Soluciones Digitales. Hace años trabajo en ecommerce, comunicación y producto digital, acompañando proyectos que necesitan ordenar su presencia online y empezar a vender de forma más profesional.</p>
-    <p>Antes de crear Cereza, construí mi propio negocio handmade, HOKU DECO, donde aprendí ecommerce desde adentro: cargando productos, armando colecciones, vendiendo online, mejorando la experiencia de compra y entendiendo qué necesita una emprendedora cuando quiere crecer sin sentirse abrumada.</p>
-    <p>También trabajé en producto y marketing digital, una experiencia que me ayudó a mirar cada tienda no solo desde el diseño, sino también desde la estrategia, la navegación y la forma en que una clienta decide comprar.</p>
-    <p>Hoy pongo toda esa experiencia al servicio de emprendedoras que quieren una tienda clara, linda y lista para vender. No trabajo con soluciones genéricas: busco que cada ecommerce refleje la identidad de la marca y sea fácil de usar desde el primer día.</p>
+    <p>Soy Giselle Calabrese, Lic. en Comunicación Social y creadora de Soluciones Cereza.</p>
+    <p>Hace más de 10 años trabajo en ecommerce, comunicación y producto digital, ayudando a marcas y emprendedoras a construir una presencia online sólida y profesional.</p>
+    <p>Antes de crear Soluciones Cereza desarrollé mi propio emprendimiento, HOKU DECO, donde viví el ecommerce desde adentro: diseñé productos, construí la tienda online, optimicé la experiencia de compra y acompañé el crecimiento de la marca. Esa experiencia me permitió entender, en primera persona, los desafíos que enfrenta una emprendedora al vender por internet.</p>
+    <p>A lo largo de mi carrera también trabajé en producto y marketing digital, incorporando una mirada estratégica sobre la experiencia de usuario, la navegación, la comunicación visual y el desarrollo de productos digitales.</p>
+    <p>Hoy pongo toda esa experiencia al servicio de emprendedoras y marcas que quieren comunicar mejor, fortalecer su identidad visual y construir una presencia digital coherente. Mi objetivo es crear ecommerce y experiencias visuales que transmitan confianza, reflejen la esencia de cada marca y acompañen su crecimiento.</p>
   </div>
 </div>
 
